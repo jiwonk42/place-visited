@@ -6,16 +6,20 @@ namespace VisitedPlaces.Objects
   public class Place
   {
     private string _name;
-    private int _number;
+    private int _id;
+    private Detail _detail;
 
     private static List<Place> _myList = new List<Place>{};
+    private static int idCounter = 1;
 
 
-    public Place (string name)
+    public Place (string name, Detail detail)
     {
       _name = name;
+      _detail = detail;
+      _id = idCounter;
+      idCounter++;
       _myList.Add(this);
-      _number = _myList.Count;
     }
 
     public string GetName()
@@ -28,14 +32,19 @@ namespace VisitedPlaces.Objects
       _name = newName;
     }
 
-    public int GetNumber()
+    public int GetId()
     {
-      return _number;
+      return _id;
     }
 
-    public void SetNumber(int newNumber)
+    public Detail GetDetail()
     {
-      _number = newNumber;
+      return _detail;
+    }
+
+    public void SetDetail(Detail newDetail)
+    {
+      _detail = newDetail;
     }
 
     public static List<Place> GetList()

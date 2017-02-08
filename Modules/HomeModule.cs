@@ -16,7 +16,8 @@ namespace VisitedPlaces
       };
       Get["/place_form"] = _ => View["place_form.cshtml"];
       Post["/places"] = _ => {
-        Place newPlace = new Place(Request.Form["new-place"]);
+        Detail newDetail = new Detail(Request.Form["new-date"], Request.Form["new-occasion"], Request.Form["new-food"]);
+        Place newPlace = new Place(Request.Form["new-place"],newDetail);
         List<Place> allPlace = Place.GetList();
         return View["places.cshtml", allPlace];
       };

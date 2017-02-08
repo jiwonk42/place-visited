@@ -1,7 +1,13 @@
 <h1>You have visited</h1>
 <h2>@Model.GetName()</h2>
+<ul>
+  <li>@Model.GetDetail().GetDate()</li>
+  <li>@Model.GetDetail().GetOccasion()</li>
+  <li>@Model.GetDetail().GetFood()</li>
+</ul>
 <a href="/place_form">Enter a new place you have visited</a>
-<form action="/place_cleared/@Model.GetNumber()" method="post">
+  <form action="/place_cleared/@Model.GetId()" method="post">
   <button type="submit" name="button">Remove this place from the list</button>
-</form>
+  </form>
+
 <a href="/places">See the list of all places so far</a>

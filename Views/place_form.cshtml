@@ -1,6 +1,20 @@
 <h1>Add a new place</h1>
 <form action="/places" method="post">
-  <label for="new-place">Enter the name of new place</label>
-  <input type="text" name="new-place" id="new-place">
+  <div class="form-group">
+    <label for="new-place">Enter the name of new place</label>
+    <input type="text" name="new-place" class="form-control" id="new-place">
+  </div>
+  <div class="form-group">
+    <label for="new-date">Enter the name of new date</label>
+    <input type="text" name="new-date" class="form-control" id="new-date">
+  </div>
+  <div class="form-group">
+    <label for="new-occasion">Enter the name of new occasion</label>
+    <input type="text" name="new-occasion" class="form-control" id="new-occasion">
+  </div>
+  <div class="form-group">
+    <label for="new-food">Enter the name of new food</label>
+    <input type="text" name="new-food" class="form-control" id="new-food">  
+  </div>
   <button type="submit">Add</button>
 </form>
