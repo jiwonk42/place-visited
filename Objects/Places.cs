@@ -10,6 +10,7 @@ namespace VisitedPlaces.Objects
 
     private static List<Place> _myList = new List<Place>{};
 
+
     public Place (string name)
     {
       _name = name;
@@ -32,6 +33,11 @@ namespace VisitedPlaces.Objects
       return _number;
     }
 
+    public void SetNumber(int newNumber)
+    {
+      _number = newNumber;
+    }
+
     public static List<Place> GetList()
     {
       return _myList;
@@ -41,5 +47,16 @@ namespace VisitedPlaces.Objects
     {
       return _myList[searchNo - 1];
     }
+
+    public static void ClearSingle(int searchNoSingle)
+    {
+      _myList.RemoveAt(searchNoSingle - 1);
+    }
+
+    public static void ClearAll()
+    {
+      _myList.Clear();
+    }
+
   }
 }

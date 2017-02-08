@@ -1,4 +1,7 @@
 <h1>You have visited</h1>
 <h2>@Model.GetName()</h2>
 <a href="/place_form">Enter a new place you have visited</a>
+<form action="/place_cleared/@Model.GetNumber()" method="post">
+  <button type="submit" name="button">Remove this place from the list</button>
+</form>
 <a href="/places">See the list of all places so far</a>

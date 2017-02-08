@@ -1,8 +1,14 @@
+
+
 <h1>Places you have visited</h1>
 <ul>
   @foreach (var visited in Model)
   {
-    <li> <a href ='/places/@visited.GetNumber()'> @visited.GetName()</a></li>
+    int myNumber= @Model.IndexOf(@visited) + 1;
+    <li> <a href ='/places/@myNumber'> @visited.GetName()</a></li>
   }
 </ul>
 <a href="/place_form">Enter a new place you have visited</a>
+<form action="/places_cleared" method="post">
+  <button type="submit">Clear All</button>
+</form>

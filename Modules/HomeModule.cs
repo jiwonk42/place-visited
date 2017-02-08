@@ -1,5 +1,6 @@
 using Nancy;
 using VisitedPlaces.Objects;
+using System;
 using System.Collections.Generic;
 
 namespace VisitedPlaces
@@ -22,6 +23,14 @@ namespace VisitedPlaces
       Get["/places/{number}"] = parameters => {
         Place numberedPlace = Place.Find(parameters.number);
         return View["/place.cshtml", numberedPlace];
+      };
+      Post["/place_cleared/{id}"] = parameters => {
+        Place.ClearSingle(parameters.id);
+        return View["/place_cleared.cshtml"];
+      };
+      Post["/places_cleared"] = _ => {
+        Place.ClearAll();
+        return View["/places_cleared.cshtml"];
       };
     }
   }
