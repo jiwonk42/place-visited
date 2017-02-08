@@ -1,0 +1,8 @@
+<h1>Places you have visited</h1>
+<ul>
+  @foreach (var visited in Model)
+  {
+    <li> <a href ='/places/@visited.GetNumber()'> @visited.GetName()</a></li>
+  }
+</ul>
+<a href="/place_form">Enter a new place you have visited</a>
